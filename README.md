@@ -4,6 +4,12 @@
 
 作者微信：**staraiwork**（用的时候卡住了可以直接找我）
 
+## 工作原理一图看懂
+
+![工作原理](assets/diagram/工作原理.png)
+
+> 矢量版 `assets/diagram/工作原理.svg`，可直接拖进 PPT / Keynote 编辑；`工作原理.html` 是源文件。
+
 ![开场](assets/preview/frame-2.png)
 ![核心演示](assets/preview/frame-20.png)
 ![结尾](assets/preview/frame-42.png)
