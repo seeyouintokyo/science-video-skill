@@ -88,7 +88,8 @@ science-video-skill/
 │   ├── preview/                   # README 用的全片 GIF 和静帧
 │   └── scaffold/                  # 项目骨架：组件、占位屏、Video 装配
 ├── references/
-│   └── remotion-recipes.md        # 月相、轨道、平行光束、分屏、字幕时间分配的画法
+│   ├── remotion-recipes.md        # 月相、轨道、平行光束、分屏、字幕时间分配的画法
+│   └── minimax-tts.md             # 配音接口：端点、请求体、返回的 hex、报错对照
 └── examples/moon/                 # 已完成的月相短片：分镜 + 全部源码
 ```
 
