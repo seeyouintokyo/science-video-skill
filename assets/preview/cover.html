@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:1280px; height:720px; overflow:hidden; background:#070B18; }
+  .cover {
+    position:relative; width:1280px; height:720px; overflow:hidden;
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; color:#F4F6FB;
+    background:
+      radial-gradient(52% 62% at 73% 42%, rgba(255,200,87,0.16) 0%, rgba(255,200,87,0) 64%),
+      radial-gradient(46% 56% at 8% 14%, rgba(110,168,255,0.10) 0%, rgba(110,168,255,0) 68%),
+      #070B18;
+  }
+  .stars {
+    position:absolute; inset:0; opacity:.7;
+    background-image:
+      radial-gradient(1.4px 1.4px at 12% 22%, #fff, transparent 60%),
+      radial-gradient(1.1px 1.1px at 28% 68%, #cfe0ff, transparent 60%),
+      radial-gradient(1.6px 1.6px at 44% 12%, #fff, transparent 60%),
+      radial-gradient(1.1px 1.1px at 60% 80%, #cfe0ff, transparent 60%),
+      radial-gradient(1.3px 1.3px at 84% 16%, #fff, transparent 60%),
+      radial-gradient(1px 1px at 93% 58%, #cfe0ff, transparent 60%),
+      radial-gradient(1.2px 1.2px at 7% 86%, #fff, transparent 60%),
+      radial-gradient(1px 1px at 70% 30%, #fff, transparent 60%);
+  }
+  .orbit { position:absolute; left:650px; top:24px; width:560px; height:560px;
+           border-radius:50%; border:1px dashed rgba(255,255,255,0.10); }
+  .orbit i { position:absolute; left:50%; top:50%; width:7px; height:7px; margin:-3.5px 0 0 -3.5px;
+             border-radius:50%; background:#6EA8FF; box-shadow:0 0 18px rgba(110,168,255,0.95); }
+  .m { position:absolute; filter:drop-shadow(0 26px 60px rgba(0,0,0,0.55)); }
+  .glow { position:absolute; left:770px; top:130px; width:340px; height:340px; border-radius:50%;
+          background:radial-gradient(circle, rgba(255,235,200,0.30) 0%, rgba(255,220,160,0.10) 46%, rgba(255,220,160,0) 72%); }
+  .meta { position:absolute; left:88px; top:146px; width:580px; }
+  .kicker { font-size:19px; letter-spacing:4px; color:#FFC857; margin-bottom:26px; }
+  .title { font-size:66px; font-weight:800; line-height:1.16; letter-spacing:1px; }
+  .sub { margin-top:26px; font-size:26px; line-height:1.6; color:#A7B1C9; }
+  .pill { display:inline-flex; align-items:center; gap:14px; margin-top:40px;
+          padding:15px 34px 15px 18px; border-radius:999px; background:#FFC857; color:#17130A;
+          font-size:24px; font-weight:700; box-shadow:0 16px 44px rgba(255,200,87,0.22); }
+  .pill .tri { width:40px; height:40px; border-radius:50%; background:#17130A;
+               display:flex; align-items:center; justify-content:center; }
+  .spec { margin-top:26px; font-size:19px; color:#7C87A3; letter-spacing:.3px; }
+  .spec em { font-style:normal; margin:0 10px; color:#3D475F; }
+</style>
+</head>
+<body>
+  <div class="cover">
+    <div class="stars"></div>
+    <div class="orbit"><i></i></div>
+    <div class="glow"></div>
+    <div class="m" style="left:745px;top:76px"><svg width="430" height="430" viewBox="0 0 430 430">
+  <defs>
+    <radialGradient id="lit" cx="35%" cy="32%" r="78%">
+      <stop offset="0%" stop-color="#FBFCFE"/><stop offset="62%" stop-color="#E4E9F4"/><stop offset="100%" stop-color="#C6CFE2"/>
+    </radialGradient>
+    <radialGradient id="dark" cx="42%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#1A2340"/><stop offset="100%" stop-color="#0E1428"/>
+    </radialGradient>
+  </defs>
+  <circle cx="215.0" cy="215.0" r="209.0" fill="url(#dark)"/>
+  <circle cx="215.0" cy="215.0" r="209.0" fill="url(#lit)"/>
+  <circle cx="215.0" cy="215.0" r="214.0" fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="1.4"/>
+</svg></div>
+    <div class="m" style="left:772px;top:556px"><svg width="74" height="74" viewBox="0 0 74 74">
+  <defs>
+    <radialGradient id="lit" cx="35%" cy="32%" r="78%">
+      <stop offset="0%" stop-color="#FBFCFE"/><stop offset="62%" stop-color="#E4E9F4"/><stop offset="100%" stop-color="#C6CFE2"/>
+    </radialGradient>
+    <radialGradient id="dark" cx="42%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#1A2340"/><stop offset="100%" stop-color="#0E1428"/>
+    </radialGradient>
+  </defs>
+  <circle cx="37.0" cy="37.0" r="31.0" fill="url(#dark)"/>
+  <path d="M 37.0 6.0 A 31.0 31.0 0 0 0 37.0 68.0 A 21.22 31.0 0 0 1 37.0 6.0 Z" fill="url(#lit)"/>
+  <circle cx="37.0" cy="37.0" r="36.0" fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="1.4"/>
+</svg></div>
+    <div class="m" style="left:866px;top:550px"><svg width="80" height="80" viewBox="0 0 80 80">
+  <defs>
+    <radialGradient id="lit" cx="35%" cy="32%" r="78%">
+      <stop offset="0%" stop-color="#FBFCFE"/><stop offset="62%" stop-color="#E4E9F4"/><stop offset="100%" stop-color="#C6CFE2"/>
+    </radialGradient>
+    <radialGradient id="dark" cx="42%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#1A2340"/><stop offset="100%" stop-color="#0E1428"/>
+    </radialGradient>
+  </defs>
+  <circle cx="40.0" cy="40.0" r="34.0" fill="url(#dark)"/>
+  <path d="M 40.0 6.0 A 34.0 34.0 0 0 0 40.0 74.0 A 0.00 34.0 0 0 0 40.0 6.0 Z" fill="url(#lit)"/>
+  <circle cx="40.0" cy="40.0" r="39.0" fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="1.4"/>
+</svg></div>
+    <div class="m" style="left:960px;top:544px"><svg width="86" height="86" viewBox="0 0 86 86">
+  <defs>
+    <radialGradient id="lit" cx="35%" cy="32%" r="78%">
+      <stop offset="0%" stop-color="#FBFCFE"/><stop offset="62%" stop-color="#E4E9F4"/><stop offset="100%" stop-color="#C6CFE2"/>
+    </radialGradient>
+    <radialGradient id="dark" cx="42%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#1A2340"/><stop offset="100%" stop-color="#0E1428"/>
+    </radialGradient>
+  </defs>
+  <circle cx="43.0" cy="43.0" r="37.0" fill="url(#dark)"/>
+  <path d="M 43.0 6.0 A 37.0 37.0 0 0 0 43.0 80.0 A 28.51 37.0 0 0 0 43.0 6.0 Z" fill="url(#lit)"/>
+  <circle cx="43.0" cy="43.0" r="42.0" fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="1.4"/>
+</svg></div>
+    <div class="m" style="left:1058px;top:538px"><svg width="92" height="92" viewBox="0 0 92 92">
+  <defs>
+    <radialGradient id="lit" cx="35%" cy="32%" r="78%">
+      <stop offset="0%" stop-color="#FBFCFE"/><stop offset="62%" stop-color="#E4E9F4"/><stop offset="100%" stop-color="#C6CFE2"/>
+    </radialGradient>
+    <radialGradient id="dark" cx="42%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#1A2340"/><stop offset="100%" stop-color="#0E1428"/>
+    </radialGradient>
+  </defs>
+  <circle cx="46.0" cy="46.0" r="40.0" fill="url(#dark)"/>
+  <circle cx="46.0" cy="46.0" r="40.0" fill="url(#lit)"/>
+  <circle cx="46.0" cy="46.0" r="45.0" fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="1.4"/>
+</svg></div>
+    <div class="meta">
+      <div class="kicker">SAMPLE · 成片示例</div>
+      <div class="title">月亮为什么<br>有阴晴圆缺</div>
+      <div class="sub">位置一变，看到的部分就变</div>
+      <div class="pill">
+        <span class="tri"><svg width="14" height="16" viewBox="0 0 14 16"><path d="M2 2 L12 8 L2 14 Z" fill="#FFC857"/></svg></span>
+        播放 44 秒
+      </div>
+      <div class="spec">1920×1080<em>·</em>MiniMax 中文解说<em>·</em>CC0 配乐</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -4,17 +4,22 @@
 
 作者微信：**staraiwork**（用的时候卡住了可以直接找我）
 
+## 先看成片
+
+下面这条是用本 Skill 做的示例《月亮为什么有阴晴圆缺》，六屏高光剪在一起（GIF 自动循环）：
+
+![六屏高光预览](assets/preview/highlight.gif)
+
+[![播放完整成片](assets/preview/cover.png)](examples/moon/moon.mp4)
+
+> 完整版 44 秒、1920×1080、30fps、约 5.5 MB，MiniMax 中文解说 + CC0 配乐，成片响度 -16.7 LUFS。
+> **点封面**在 GitHub 里直接播放；也可以下载 [`examples/moon/moon.mp4`](examples/moon/moon.mp4)。
+
 ## 工作原理一图看懂
 
 ![工作原理](assets/diagram/工作原理.png)
 
 > 矢量版 `assets/diagram/工作原理.svg`，可直接拖进 PPT / Keynote 编辑；`工作原理.html` 是源文件。
-
-![开场](assets/preview/frame-2.png)
-![核心演示](assets/preview/frame-20.png)
-![结尾](assets/preview/frame-42.png)
-
-> 上面三张出自 `examples/moon`：一条 44.4 秒的《月亮为什么有阴晴圆缺》，六屏，MiniMax 配音，-16.7 LUFS。
 
 ## 一、它怎么工作
 
@@ -81,14 +86,14 @@ science-video-skill/
 ├── assets/
 │   ├── tokens.ts                  # 配色、字号、间距、动画节奏（换风格只改这个）
 │   ├── bgm.mp3                    # CC0 背景音乐
-│   ├── preview/                   # README 用的截图
+│   ├── preview/                   # README 用的动图、封面、静帧
 │   └── scaffold/                  # 项目骨架：组件、占位屏、Video 装配
 ├── references/
 │   └── remotion-recipes.md        # 月相、轨道、平行光束、分屏、字幕时间分配的画法
-└── examples/moon/                 # 已完成的月相短片（含分镜、源码、配音脚本）
+└── examples/moon/                 # 已完成的月相短片：成片 mp4 + 分镜 + 全部源码
 ```
 
-`examples/moon` 是可以直接对照的完整答案：六个 screen 组件、`narration.json`、`voice.json`、`分镜.md` 都在里面。
+`examples/moon` 是可以直接对照的完整答案：成片 `moon.mp4`、六个 screen 组件、`narration.json`、`voice.json`、`分镜.md` 都在里面。
 
 ## 六、几个常见坑
 
