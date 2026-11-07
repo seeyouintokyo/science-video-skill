@@ -1,0 +1,9 @@
+{
+  "_note": "占位值，跑一次 node tools/tts.mjs 就会被真实长度覆盖",
+  "s1": {"seconds": 5.0, "frames": 174},
+  "s2": {"seconds": 4.0, "frames": 144},
+  "s3": {"seconds": 6.0, "frames": 204},
+  "s4": {"seconds": 9.0, "frames": 294},
+  "s5": {"seconds": 6.0, "frames": 204},
+  "s6": {"seconds": 6.0, "frames": 204}
+}
