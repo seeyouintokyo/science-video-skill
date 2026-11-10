@@ -4,48 +4,113 @@
 <meta charset="utf-8">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
-  html,body { width:512px; height:512px; overflow:hidden; background:#0A0F1E; }
+  html,body { width:512px; height:512px; overflow:hidden; background:#060A12; }
   svg { display:block; }
 </style>
 </head>
 <body>
 <svg width="512" height="512" viewBox="0 0 512 512">
   <defs>
-    <radialGradient id="bg" cx="50%" cy="40%" r="72%">
-      <stop offset="0%" stop-color="#182140"/>
-      <stop offset="100%" stop-color="#070B16"/>
+    <radialGradient id="bg" cx="50%" cy="32%" r="80%">
+      <stop offset="0%" stop-color="#14304A"/>
+      <stop offset="48%" stop-color="#0A1526"/>
+      <stop offset="100%" stop-color="#04070D"/>
     </radialGradient>
-    <radialGradient id="moon" cx="34%" cy="30%" r="78%">
-      <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="55%" stop-color="#E9EEF8"/>
-      <stop offset="100%" stop-color="#C0CBE0"/>
-    </radialGradient>
+
     <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FFD79A" stop-opacity="0.30"/>
-      <stop offset="55%" stop-color="#FFD79A" stop-opacity="0.07"/>
-      <stop offset="100%" stop-color="#FFD79A" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#3FE3CE" stop-opacity="0.30"/>
+      <stop offset="52%" stop-color="#1C8FD6" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#1C8FD6" stop-opacity="0"/>
     </radialGradient>
-    <clipPath id="clip">
-      <circle cx="256" cy="256" r="134"/>
+
+    <radialGradient id="liquidGlow" cx="50%" cy="46%" r="52%">
+      <stop offset="0%" stop-color="#6FF3DC" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#6FF3DC" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="liquid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8CFFE8"/>
+      <stop offset="38%" stop-color="#25CCD9"/>
+      <stop offset="100%" stop-color="#0A55C8"/>
+    </linearGradient>
+
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="42%" stop-color="#BEEBFF" stop-opacity="0.045"/>
+      <stop offset="100%" stop-color="#7FD8FF" stop-opacity="0.13"/>
+    </linearGradient>
+
+    <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F2FFFF"/>
+      <stop offset="100%" stop-color="#6FD4FF"/>
+    </linearGradient>
+
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="17" cy="17" r="1.3" fill="#8FE3FF" fill-opacity="0.09"/>
+    </pattern>
+
+    <clipPath id="flaskClip">
+      <path d="M 216 100 L 216 196 C 216 212 214 220 206 230 L 146 380 C 139 396 148 414 166 414 L 346 414 C 364 414 373 396 366 380 L 306 230 C 298 220 296 212 296 196 L 296 100 Z"/>
     </clipPath>
   </defs>
 
   <rect width="512" height="512" fill="url(#bg)"/>
-  <circle cx="256" cy="256" r="240" fill="url(#glow)"/>
+  <rect width="512" height="512" fill="url(#grid)"/>
+  <ellipse cx="256" cy="300" rx="228" ry="204" fill="url(#glow)"/>
 
   <!-- 轨道环 -->
-  <circle cx="256" cy="256" r="198" fill="none" stroke="#7FA6E8" stroke-opacity="0.30" stroke-width="2" stroke-dasharray="7 13"/>
+  <circle cx="256" cy="256" r="232" fill="none" stroke="#7FD8FF" stroke-opacity="0.15" stroke-width="2" stroke-dasharray="6 12"/>
 
-  <!-- 月球：亮面 + 右缘暗弧（表示“圆缺是角度问题”） -->
-  <circle cx="256" cy="256" r="134" fill="url(#moon)"/>
-  <g clip-path="url(#clip)">
-    <circle cx="466" cy="256" r="134" fill="#0A1122" fill-opacity="0.96"/>
+  <!-- 瓶身玻璃 -->
+  <path d="M 216 100 L 216 196 C 216 212 214 220 206 230 L 146 380 C 139 396 148 414 166 414 L 346 414 C 364 414 373 396 366 380 L 306 230 C 298 220 296 212 296 196 L 296 100 Z"
+        fill="url(#glass)" stroke="#9CE6FF" stroke-opacity="0.78" stroke-width="7.5" stroke-linejoin="round"/>
+
+  <g clip-path="url(#flaskClip)">
+    <ellipse cx="256" cy="352" rx="120" ry="86" fill="url(#liquidGlow)"/>
+
+    <!-- 液体 -->
+    <rect x="130" y="306" width="252" height="120" fill="url(#liquid)"/>
+    <ellipse cx="256" cy="306" rx="81" ry="11" fill="#9CFFF1" fill-opacity="0.95"/>
+    <ellipse cx="256" cy="306" rx="81" ry="11" fill="none" stroke="#FFFFFF" stroke-opacity="0.6" stroke-width="2.5"/>
+
+    <!-- 液面下扫描线 -->
+    <g stroke="#DFFFFA" stroke-opacity="0.16" stroke-width="2">
+      <path d="M 150 340 L 362 340"/>
+      <path d="M 150 366 L 362 366"/>
+    </g>
+
+    <!-- 反光条 -->
+    <path d="M 168 316 L 212 316 L 190 414 L 168 414 Z" fill="#FFFFFF" fill-opacity="0.10"/>
+
+    <!-- 气泡 -->
+    <circle cx="206" cy="366" r="15" fill="#C9FFF7" fill-opacity="0.5"/>
+    <circle cx="206" cy="366" r="15" fill="none" stroke="#FFFFFF" stroke-opacity="0.7" stroke-width="2.5"/>
+    <circle cx="252" cy="338" r="9" fill="#E9FFFC" fill-opacity="0.7"/>
+    <circle cx="300" cy="378" r="19" fill="#B9FFF4" fill-opacity="0.42"/>
+    <circle cx="300" cy="378" r="19" fill="none" stroke="#FFFFFF" stroke-opacity="0.5" stroke-width="2.5"/>
+    <circle cx="272" cy="352" r="6" fill="#FFFFFF" fill-opacity="0.7"/>
+    <circle cx="232" cy="392" r="7" fill="#E6FFFB" fill-opacity="0.6"/>
+
+    <!-- 玻璃内高光 -->
+    <g stroke="#FFFFFF" stroke-linecap="round" fill="none">
+      <path d="M 226 124 L 226 194" stroke-opacity="0.22" stroke-width="3"/>
+      <path d="M 221 212 L 170 360" stroke-opacity="0.14" stroke-width="3"/>
+      <path d="M 336 372 L 348 396" stroke-opacity="0.12" stroke-width="3"/>
+    </g>
   </g>
 
+  <!-- 瓶口 -->
+  <rect x="200" y="90" width="112" height="20" rx="10" fill="#0B1B2C" stroke="url(#rim)" stroke-width="6"/>
+
+  <!-- 溢出气泡 -->
+  <circle cx="300" cy="70" r="10" fill="none" stroke="#9CE6FF" stroke-opacity="0.6" stroke-width="2.5"/>
+  <circle cx="332" cy="44" r="6.5" fill="none" stroke="#9CE6FF" stroke-opacity="0.42" stroke-width="2.5"/>
+  <circle cx="214" cy="56" r="4.5" fill="#9CE6FF" fill-opacity="0.35"/>
+
   <!-- 星点 -->
-  <circle cx="108" cy="108" r="3.2" fill="#FFFFFF" fill-opacity="0.85"/>
-  <circle cx="408" cy="152" r="2.4" fill="#FFFFFF" fill-opacity="0.55"/>
-  <circle cx="424" cy="372" r="3" fill="#FFC857" fill-opacity="0.9"/>
+  <circle cx="80" cy="150" r="2.6" fill="#FFFFFF" fill-opacity="0.45"/>
+  <circle cx="120" cy="76" r="2" fill="#FFFFFF" fill-opacity="0.35"/>
+  <circle cx="424" cy="418" r="2.8" fill="#FFC857" fill-opacity="0.9"/>
 </svg>
 </body>
 </html>

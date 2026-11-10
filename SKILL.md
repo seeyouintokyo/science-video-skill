@@ -1,6 +1,11 @@
 ---
 name: axing-science-video
+version: 1.0.0
+display_name: 阿星科普视频制作
+display_name_en: Axing Science Video
 description: 用 Remotion 代码画一条横屏科普动画短片（45 秒左右），配 MiniMax 中文解说、逐句字幕和 CC0 背景音乐，导出 mp4。当用户要做科普视频、知识短视频、原理动画、月相/四季/彩虹/行星这类"讲清楚一个现象"的动画视频，或提到 Remotion 科普片时使用。
+description_zh: 用代码画横屏科普动画短片：先出分镜等你确认，再自动铺 Remotion 项目、合成中文解说、按语音长度定每屏时长、逐屏写画面并截图自检，最后渲染出带字幕和背景音乐的 1080p mp4。
+description_en: Produce a 45-second landscape science explainer video with Remotion. It writes a six-beat storyboard for approval, scaffolds the project, generates Mandarin narration with MiniMax TTS, times each scene to the real audio length, builds each scene in code with self-checked screenshots, and renders a 1080p MP4 with captions and CC0 music.
 ---
 
 # 科普视频 Skill
