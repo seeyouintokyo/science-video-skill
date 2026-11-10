@@ -1,4 +1,4 @@
-# science-video
+# axing-science-video · 阿星科普视频制作
 
 一个 WorkBuddy / Claude 风格的 Skill：**用代码画科普动画短片**。给一个题目，产出一条 45 秒左右的横屏 mp4 —— 有中文解说、逐句字幕、CC0 背景音乐，画面全部由 SVG 和帧号算出来，不用任何外部图片素材。
 
@@ -46,17 +46,17 @@ Key 只放在项目根目录 `.env` 里，格式 `MINIMAX_API_KEY=sk-xxx`；也�
 
 ```bash
 git clone https://github.com/seeyouintokyo/science-video-skill.git
-cp -R science-video-skill ~/.workbuddy/skills/science-video
+cp -R science-video-skill ~/.workbuddy/skills/axing-science-video
 ```
 
-项目级安装就放到 `<项目>/.workbuddy/skills/science-video`。
+项目级安装就放到 `<项目>/.workbuddy/skills/axing-science-video`。
 
 ## 四、用法
 
 在 WorkBuddy 里直接说：
 
 ```
-用 science-video 做一条科普视频：
+用 axing-science-video 做一条科普视频：
 题目：彩虹是怎么形成的
 45 秒，横屏，用 MiniMax 配中文解说。
 先给我看分镜。
@@ -79,7 +79,7 @@ npx remotion render src/index.ts Main out/video.mp4
 Skill 包只允许「根目录 / 二级目录 / 文件」两层，所以骨架和示例文件都是**拍平改名**存放的，真路径由 `assets/scaffold-manifest.json` 映射回去。
 
 ```
-science-video/
+axing-science-video/
 ├── SKILL.md                       # 给 AI 读的作业流程和硬规则
 ├── README.md
 ├── LICENSE

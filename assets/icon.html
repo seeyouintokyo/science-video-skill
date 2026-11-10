@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:512px; height:512px; overflow:hidden; background:#0A0F1E; }
+  svg { display:block; }
+</style>
+</head>
+<body>
+<svg width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="72%">
+      <stop offset="0%" stop-color="#182140"/>
+      <stop offset="100%" stop-color="#070B16"/>
+    </radialGradient>
+    <radialGradient id="moon" cx="34%" cy="30%" r="78%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="55%" stop-color="#E9EEF8"/>
+      <stop offset="100%" stop-color="#C0CBE0"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFD79A" stop-opacity="0.30"/>
+      <stop offset="55%" stop-color="#FFD79A" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#FFD79A" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="clip">
+      <circle cx="256" cy="256" r="134"/>
+    </clipPath>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="240" fill="url(#glow)"/>
+
+  <!-- 轨道环 -->
+  <circle cx="256" cy="256" r="198" fill="none" stroke="#7FA6E8" stroke-opacity="0.30" stroke-width="2" stroke-dasharray="7 13"/>
+
+  <!-- 月球：亮面 + 右缘暗弧（表示“圆缺是角度问题”） -->
+  <circle cx="256" cy="256" r="134" fill="url(#moon)"/>
+  <g clip-path="url(#clip)">
+    <circle cx="466" cy="256" r="134" fill="#0A1122" fill-opacity="0.96"/>
+  </g>
+
+  <!-- 星点 -->
+  <circle cx="108" cy="108" r="3.2" fill="#FFFFFF" fill-opacity="0.85"/>
+  <circle cx="408" cy="152" r="2.4" fill="#FFFFFF" fill-opacity="0.55"/>
+  <circle cx="424" cy="372" r="3" fill="#FFC857" fill-opacity="0.9"/>
+</svg>
+</body>
+</html>

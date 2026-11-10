@@ -1,5 +1,5 @@
 ---
-name: science-video
+name: axing-science-video
 description: 用 Remotion 代码画一条横屏科普动画短片（45 秒左右），配 MiniMax 中文解说、逐句字幕和 CC0 背景音乐，导出 mp4。当用户要做科普视频、知识短视频、原理动画、月相/四季/彩虹/行星这类"讲清楚一个现象"的动画视频，或提到 Remotion 科普片时使用。
 ---
 
