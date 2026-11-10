@@ -1,5 +1,8 @@
 // 在目标目录铺出一个可运行的 Remotion 科普视频项目
 // 用法：node scripts/scaffold.mjs <目标目录>
+//
+// Skill 包只允许「根目录 / 二级目录 / 文件」两层，所以 assets 里的骨架文件是拍平放的
+// （scaffold-*.tsx 这种）。assets/scaffold-manifest.json 记录了它们该落到生成项目的哪个路径。
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -14,35 +17,30 @@ if (fs.existsSync(target) && fs.readdirSync(target).length > 0) {
   process.exit(1);
 }
 
-const copyDir = (from, to) => {
-  fs.mkdirSync(to, {recursive: true});
-  for (const item of fs.readdirSync(from, {withFileTypes: true})) {
-    const src = path.join(from, item.name);
-    const dst = path.join(to, item.name);
-    if (item.isDirectory()) copyDir(src, dst);
-    else fs.copyFileSync(src, dst);
-  }
-};
+const manifest = JSON.parse(
+  fs.readFileSync(path.join(skillRoot, 'assets/scaffold-manifest.json'), 'utf8'),
+);
 
-// 1. 项目骨架
-copyDir(path.join(skillRoot, 'assets/scaffold'), target);
+// 1. 按 manifest 把拍平的骨架文件铺回 src/components、src/scenes 等真实路径
+for (const [dest, src] of Object.entries(manifest.files)) {
+  const from = path.join(skillRoot, 'assets', src);
+  const to = path.join(target, dest);
+  fs.mkdirSync(path.dirname(to), {recursive: true});
+  fs.copyFileSync(from, to);
+}
 
-// 2. 设计 tokens + 自带 CC0 音乐
-fs.copyFileSync(path.join(skillRoot, 'assets/tokens.ts'), path.join(target, 'src/tokens.ts'));
-fs.mkdirSync(path.join(target, 'public/voice'), {recursive: true});
-fs.copyFileSync(path.join(skillRoot, 'assets/bgm.mp3'), path.join(target, 'public/bgm.mp3'));
-
-// 3. 配音脚本
+// 2. 配音脚本 + 空 voice 目录
 fs.mkdirSync(path.join(target, 'tools'), {recursive: true});
 fs.copyFileSync(path.join(skillRoot, 'scripts/tts.mjs'), path.join(target, 'tools/tts.mjs'));
 
-// 4. Key 模板
+// 3. Key 模板
 fs.writeFileSync(path.join(target, '.env.example'), 'MINIMAX_API_KEY=\n');
 if (!fs.existsSync(path.join(target, '.env'))) {
   fs.writeFileSync(path.join(target, '.env'), 'MINIMAX_API_KEY=\n');
 }
 
-console.log(`项目已铺好：${target}`);
+const written = Object.keys(manifest.files).length + 1;
+console.log(`项目已铺好：${target}（${written} 个文件）`);
 console.log('');
 console.log('下一步：');
 console.log('  1. 把 MiniMax Key 填进 .env，或 export MINIMAX_API_KEY=sk-xxx');

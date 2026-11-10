@@ -1,0 +1,24 @@
+{
+  "说明": "扁平存放是为了满足 Skill 包两级目录限制（根目录/二级目录/文件）。这张表把 assets 里的文件映射回生成项目的真实路径。",
+  "files": {
+    "package.json": "scaffold-package.json",
+    "tsconfig.json": "scaffold-tsconfig.json",
+    "src/index.ts": "scaffold-index.ts",
+    "src/Root.tsx": "scaffold-Root.tsx",
+    "src/Video.tsx": "scaffold-Video.tsx",
+    "src/voiceData.ts": "scaffold-voiceData.ts",
+    "src/narration.json": "scaffold-narration.json",
+    "src/voice.json": "scaffold-voice.json",
+    "src/tokens.ts": "tokens.ts",
+    "src/components/Typography.tsx": "scaffold-Typography.tsx",
+    "src/components/Starfield.tsx": "scaffold-Starfield.tsx",
+    "src/components/MoonPhase.tsx": "scaffold-MoonPhase.tsx",
+    "src/scenes/S1.tsx": "scaffold-S1.tsx",
+    "src/scenes/S2.tsx": "scaffold-S2.tsx",
+    "src/scenes/S3.tsx": "scaffold-S3.tsx",
+    "src/scenes/S4.tsx": "scaffold-S4.tsx",
+    "src/scenes/S5.tsx": "scaffold-S5.tsx",
+    "src/scenes/S6.tsx": "scaffold-S6.tsx",
+    "public/bgm.mp3": "bgm.mp3"
+  }
+}
