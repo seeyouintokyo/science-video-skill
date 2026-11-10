@@ -1,3 +1,5 @@
+<img src="assets/icon.png" width="112" align="right" alt="阿星科普视频制作">
+
 # axing-science-video · 阿星科普视频制作
 
 一个 WorkBuddy / Claude 风格的 Skill：**用代码画科普动画短片**。给一个题目，产出一条 45 秒左右的横屏 mp4 —— 有中文解说、逐句字幕、CC0 背景音乐，画面全部由 SVG 和帧号算出来，不用任何外部图片素材。
