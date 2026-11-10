@@ -22,11 +22,31 @@ const manifest = JSON.parse(
 );
 
 // 1. 按 manifest 把拍平的骨架文件铺回 src/components、src/scenes 等真实路径
+//    SkillHub 版包里不带 mp3（平台只收文本文件），BGM 走第 1.5 步下载
+const BGM_DEST = 'public/bgm.mp3';
 for (const [dest, src] of Object.entries(manifest.files)) {
   const from = path.join(skillRoot, 'assets', src);
   const to = path.join(target, dest);
+  if (dest === BGM_DEST && !fs.existsSync(from)) continue;
   fs.mkdirSync(path.dirname(to), {recursive: true});
   fs.copyFileSync(from, to);
+}
+
+// 1.5 本地没有 bgm.mp3 时，从 GitHub 拉一份 CC0 垫乐
+const BGM_URL =
+  'https://raw.githubusercontent.com/seeyouintokyo/science-video-skill/main/assets/bgm.mp3';
+if (!fs.existsSync(path.join(target, BGM_DEST))) {
+  try {
+    const res = await fetch(BGM_URL, {redirect: 'follow'});
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const buf = Buffer.from(await res.arrayBuffer());
+    fs.mkdirSync(path.dirname(path.join(target, BGM_DEST)), {recursive: true});
+    fs.writeFileSync(path.join(target, BGM_DEST), buf);
+    console.log(`已下载背景音乐：${(buf.length / 1024 / 1024).toFixed(1)} MB（CC0）`);
+  } catch (err) {
+    console.error(`背景音乐下载失败：${err.message}`);
+    console.error(`请手动下载 ${BGM_URL} 放到 ${path.join(target, BGM_DEST)}，否则渲染会缺音乐。`);
+  }
 }
 
 // 2. 配音脚本 + 空 voice 目录

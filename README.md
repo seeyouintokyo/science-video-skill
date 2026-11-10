@@ -1,4 +1,4 @@
-<img src="assets/icon.png" width="112" align="right" alt="阿星科普视频制作">
+<img src="https://raw.githubusercontent.com/seeyouintokyo/science-video-skill/main/assets/icon.png" width="112" align="right" alt="阿星科普视频制作">
 
 # axing-science-video · 阿星科普视频制作
 
@@ -10,7 +10,7 @@
 
 下面这条就是用本 Skill 做出来的《月亮为什么有阴晴圆缺》，**44 秒全片**，从第一屏放到最后一屏（GIF 无声，原片有中文解说和配乐）：
 
-![示例成片：月亮为什么有阴晴圆缺](assets/moon-full.gif)
+![示例成片：月亮为什么有阴晴圆缺](https://raw.githubusercontent.com/seeyouintokyo/science-video-skill/main/assets/moon-full.gif)
 
 ▶ **[在线播放 / 下载 1080p 原片（5.5 MB，带解说和配乐）](https://github.com/seeyouintokyo/science-video-skill/releases/download/v1.0.0/moon-sample.mp4)** · 源码和分镜在 [`examples/`](examples)
 
@@ -18,9 +18,9 @@
 
 ## 工作原理一图看懂
 
-![工作原理](assets/工作原理.png)
+![工作原理](https://raw.githubusercontent.com/seeyouintokyo/science-video-skill/main/assets/how-it-works.png)
 
-> 矢量版 `assets/工作原理.svg`，可直接拖进 PPT / Keynote 编辑；`assets/工作原理.html` 是源文件。
+> 矢量版 [assets/how-it-works.svg](https://raw.githubusercontent.com/seeyouintokyo/science-video-skill/main/assets/how-it-works.svg)，可直接拖进 PPT / Keynote 编辑；[`assets/how-it-works.html`](https://raw.githubusercontent.com/seeyouintokyo/science-video-skill/main/assets/how-it-works.html) 是源文件。
 
 ## 一、它怎么工作
 
@@ -84,7 +84,7 @@ Skill 包只允许「根目录 / 二级目录 / 文件」两层，所以骨架�
 axing-science-video/
 ├── SKILL.md                       # 给 AI 读的作业流程和硬规则
 ├── README.md
-├── LICENSE
+├── LICENSE.md
 ├── scripts/
 │   ├── scaffold.mjs               # 一键铺出可运行的 Remotion 项目
 │   └── tts.mjs                    # MiniMax 配音 + 时长回写

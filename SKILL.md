@@ -110,6 +110,7 @@ ffmpeg -i out/video.mp4 -af ebur128=peak=true -f null - 2>&1 | grep -E "I:|Peak:
 - 解说：每屏一段 mp3，从该屏第 `tokens.audio.voiceDelay` 帧开口，避免切屏切掉尾音。
 - 字幕：就是解说词原句，按字数比例分配时间，一句一条，跟着语音出现消失。`components/Typography.tsx` 的 `Captions` 已实现，传 `lines` + `durationInFrames` 即可。
 - 音乐：有解说时用 `tokens.audio.bgmVolumeWithVoice`，无解说用 `bgmVolume`。音乐比片子短用 `<Loop>` 包一层，比片子长就靠结尾淡出截断。
+- 包内不带 mp3（SkillHub 只收文本文件），`scripts/scaffold.mjs` 会把这支 CC0 垫乐下载到 `public/bgm.mp3`；下载失败时按它打印的提示手动放到该路径，否则渲染没有音乐。
 - 用户自己给 mp3 就替换 `public/bgm.mp3`（商用授权由用户负责）；没有可用音乐时回落到自带 CC0，并在交付时说明来源。
 - MiniMax 语音接口的端点、请求体、返回字段、错误码见 `references/minimax-tts.md`，`scripts/tts.mjs`（项目里是 `tools/tts.mjs`）已按它实现。
 
