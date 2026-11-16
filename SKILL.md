@@ -1,7 +1,7 @@
 ---
 name: axing-science-video
 slug: axing-science-video
-version: 1.0.0
+version: 1.0.1
 displayName: 阿星科普视频制作
 display_name: 阿星科普视频制作
 display_name_en: Axing Science Video
